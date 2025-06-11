@@ -34,8 +34,9 @@ app.get("/", (req, res) => {
 
 // global error handler
 app.use(ErrorHandler);
+const PORT = process.env.PORT || 3000;
 
-app.listen(3000, () => {
+app.listen(PORT, () => {
     connectDB();
-    console.log("server is running http://localhost:3000");
+    console.log(`server is running http://localhost:${PORT}`);
 });
