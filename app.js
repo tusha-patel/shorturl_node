@@ -13,7 +13,7 @@ import { attachUser } from "./src/utils/attachUser.js";
 dotenv.config("./.env");
 const app = express();
 app.use(cors({
-    origin: "https://shorturl-frontend-nine.vercel.app",
+    origin: ["https://shorturl-frontend-nine.vercel.app", "http://localhost:5173"],
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
 }));
