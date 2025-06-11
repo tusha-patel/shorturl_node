@@ -35,8 +35,7 @@ app.get("/", (req, res) => {
 // global error handler
 app.use(ErrorHandler);
 
-// server 
-app.listen("https://shorturl-node.vercel.app", () => {
+app.listen(3000, () => {
     connectDB();
-    console.log("server is running https://shorturl-node.vercel.app");
-})
+    console.log("server is running http://localhost:3000");
+});
