@@ -1,15 +1,12 @@
 import { findUserById } from "../dao/user.dao.js";
 import { tokenVerify } from "../utils/helper.js";
 
-
+// middleware for auth
 export const authMiddleware = async (req, res, next) => {
     const token = req.cookies.accessToken;
-    console.log(token, "token from auth middleware");
-
     if (!token) {
         return res.status(401).json({ message: "Unauthorized" });
     }
-
     try {
         const decoded = tokenVerify(token);
         const user = await findUserById(decoded)

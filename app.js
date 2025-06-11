@@ -36,6 +36,8 @@ app.get("/", (req, res) => {
 // global error handler
 app.use(ErrorHandler);
 const PORT = process.env.PORT || 3000;
+
+// mongo db connection
 connectDB();
 
 app.listen(PORT, () => {

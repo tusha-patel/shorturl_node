@@ -10,7 +10,6 @@ export const registerUser = async (name, email, password) => {
     const newUser = await createUser(name, email, password);
     const token = await signToken({ id: newUser._id });
     return { token, user: newUser };
-    // return newUser;
 }
 
 // login user

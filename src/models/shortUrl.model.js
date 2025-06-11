@@ -1,5 +1,6 @@
 import mongoose from 'mongoose';
 
+// short url schema
 const shortUrlSchema = new mongoose.Schema({
     full_url: {
         type: String,

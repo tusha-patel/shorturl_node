@@ -1,9 +1,9 @@
 import { findUserById } from "../dao/user.dao.js";
 import { tokenVerify } from "./helper.js";
 
+// for all routes auto apply middleware
 export const attachUser = async (req, res, next) => {
     const token = req.cookies.accessToken;
-    // console.log(token, "token from attach user");
     if (!token) return next();
     try {
         const decoded = await tokenVerify(token);
