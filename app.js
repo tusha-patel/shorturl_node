@@ -31,6 +31,9 @@ app.use("/api/create", shortUrlRoutes);
 app.get("/:id", redirectFromShortUrl);
 app.use("/api/auth", authRoutes);
 app.use("/api/user", userRoute)
+app.get("/", (req, res) => {
+    res.send("Hello World");
+})
 
 // global error handler
 app.use(ErrorHandler);
